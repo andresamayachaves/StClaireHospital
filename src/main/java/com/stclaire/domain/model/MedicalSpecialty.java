@@ -1,6 +1,5 @@
 package com.stclaire.domain.model;
 
-import com.stclaire.domain.service.Specialty_Service;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,21 +14,15 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Specialty")
-public class Medical_Specialty {
+@Table(name = "specialty")
+public class MedicalSpecialty {
 
     @Id
-    private String SpecialtyString;    //updatable max 100char min 5char,
+    private String specialtyName;    //updatable max 100char min 5char,
 
-    @Column(name = "physician in charge")
+    @Column(name = "physicianInCharge")
     private String physicianInCharge; //updatable max 45 char min 10,
 
-    @Column(name = "name")
+    @Column(name = "patients")
     private Set<Patient> patients;
-
-
-
-    /*public void setPhysicianInCharge(String physicianInCharge) {
-        this.physicianInCharge = physicianInCharge;*/
-    }
 }

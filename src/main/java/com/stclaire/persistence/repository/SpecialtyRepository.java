@@ -1,10 +1,8 @@
 package com.stclaire.persistence.repository;
 
-import com.stclaire.domain.model.Medical_Specialty;
+import com.stclaire.domain.model.MedicalSpecialty;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Arrays;
-
-public interface SpecialtyRepository extends JpaRepository<Medical_Specialty, String>{
+public interface SpecialtyRepository extends JpaRepository<MedicalSpecialty, String>{
     //Arrays findAllPatients();  //TODO check type and method
 }
