@@ -5,21 +5,27 @@ import com.stclaire.domain.dto.PatientDTO;
 import com.stclaire.domain.model.AttributeCategory;
 import com.stclaire.domain.model.Medical_Specialty;
 import com.stclaire.domain.model.Patient;
+import com.stclaire.persistence.repository.SpecialtyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class Specialty_Service {
 
-    public List<Patient> getAllPatients(){
-        return patientRepository.findAllPatients().stream().
-                map(this::convertEntitytoDto).collect(Collectors.toList());
+    @Autowired
+    private SpecialtyRepository specialtyRepository;
 
+    public List<MedicalSpecialtyDTO> getAllPatients(){
+        return specialtyRepository.findAll().stream().
+                map(this::convertEntityToDto).collect(Collectors.toList());
     }
 
     private MedicalSpecialtyDTO convertEntityToDto(Medical_Specialty specialty){
         MedicalSpecialtyDTO specialty_DTO = new MedicalSpecialtyDTO();
-        specialty_DTO.setSpecialtyName(specialty.getName());
+        specialty_DTO.setSpecialtyName(specialty.);
         specialty_DTO.setPhysicianInCharge(specialty.getPhysicianInCharge());
         specialty_DTO.setPatients(specialty.getPatients());
 

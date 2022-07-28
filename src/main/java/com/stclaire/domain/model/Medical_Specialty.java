@@ -21,7 +21,7 @@ public class Medical_Specialty {
     @Id
     private String SpecialtyString;    //updatable max 100char min 5char,
 
-    @Column(name = "name")
+    @Column(name = "physician in charge")
     private String physicianInCharge; //updatable max 45 char min 10,
 
     @Column(name = "name")
