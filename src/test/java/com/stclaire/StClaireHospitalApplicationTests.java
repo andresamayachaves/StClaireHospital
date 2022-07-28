@@ -1,4 +1,4 @@
-package com.stclaire.stclairehospital;
+package com.stclaire;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
