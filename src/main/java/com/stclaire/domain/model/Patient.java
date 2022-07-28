@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -16,8 +17,8 @@ import java.util.List;
 @Table (name = "registry")  //TODO verfy table name
 
 public class Patient {
-    /*@Id
-    * @GeneratedValue(strategy = GenerationType.IDENTITY)*/
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private long identification_number;     //not updatable
 
     @Column(name = "name")
@@ -25,8 +26,11 @@ public class Patient {
 
     @Column(name = "age")
     private Integer age;                              //[in years], not updatable, age>0
+
+    @Column(name = "datesOfAppointments")
     private List<String> dates_of_appointments;
                                                                 //the individual date can’t be updated,
+    @Column(name = "numAppointments")
     private long number_of_appointments; //Updatable
 
      //--- "NOTE: A baby un his/her first year must be registered with age = 1 year"

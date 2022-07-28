@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Set;
 
@@ -16,16 +18,18 @@ import java.util.Set;
 @Table(name = "Specialty")
 public class Medical_Specialty {
 
-    private String name;    //updatable max 100char min 5char,
+    @Id
+    private String SpecialtyString;    //updatable max 100char min 5char,
+
+    @Column(name = "name")
     private String physicianInCharge; //updatable max 45 char min 10,
+
+    @Column(name = "name")
     private Set<Patient> patients;
 
-    public void setName(String name) {        //name comes from de Front-end
-        Specialty_Service.verifyLimits(AttributeCategory.SPECIALTY_NAME, name);
-        this.name = name;
-    }
 
-    public void setPhysicianInCharge(String physicianInCharge) {
-        this.physicianInCharge = physicianInCharge;
+
+    /*public void setPhysicianInCharge(String physicianInCharge) {
+        this.physicianInCharge = physicianInCharge;*/
     }
 }

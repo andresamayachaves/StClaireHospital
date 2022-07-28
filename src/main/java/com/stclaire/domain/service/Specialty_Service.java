@@ -1,8 +1,40 @@
 package com.stclaire.domain.service;
 
+import com.stclaire.domain.dto.MedicalSpecialtyDTO;
+import com.stclaire.domain.dto.PatientDTO;
 import com.stclaire.domain.model.AttributeCategory;
+import com.stclaire.domain.model.Medical_Specialty;
+import com.stclaire.domain.model.Patient;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Specialty_Service {
+
+    public List<Patient> getAllPatients(){
+        return patientRepository.findAllPatients().stream().
+                map(this::convertEntitytoDto).collect(Collectors.toList());
+
+    }
+
+    private MedicalSpecialtyDTO convertEntityToDto(Medical_Specialty specialty){
+        MedicalSpecialtyDTO specialty_DTO = new MedicalSpecialtyDTO();
+        specialty_DTO.setSpecialtyName(specialty.getName());
+        specialty_DTO.setPhysicianInCharge(specialty.getPhysicianInCharge());
+        specialty_DTO.setPatients(specialty.getPatients());
+
+        return specialty_DTO;
+    }
+/*
+   public void setName(String name) {        //name comes from de Front-end
+        Specialty_Service.verifyLimits(AttributeCategory.SPECIALTY_NAME, name);
+        this.name = name;
+    }*/
+
+    }
+
+    //------------------------------------
+
     public static void verifyLimits(AttributeCategory category, String input) {
         boolean inLimits = false;
         if (category == AttributeCategory.PERSON_NAME) {
