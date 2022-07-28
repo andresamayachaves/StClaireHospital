@@ -1,6 +1,5 @@
 package com.stclaire.domain.controller;
 
-import com.stclaire.domain.dto.MedicalSpecialtyDTO;
 import com.stclaire.domain.dto.PatientDTO;
 import com.stclaire.domain.service.SpecialtyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,6 @@ public class SpecialtyController {
 
     @GetMapping("/specialty-patients")
     public List<PatientDTO> getAllPatients() {
-        return specialtyService.getAllPatients();
+        return specialtyService.getAllPatientsInSpecialty();
     }
 }

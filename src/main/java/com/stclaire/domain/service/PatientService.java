@@ -11,7 +11,7 @@ public class PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
-    private PatientDTO convertEntityToDto(Patient patient){
+    static PatientDTO convertEntityToDto(Patient patient){
         PatientDTO patient_DTO = new PatientDTO();
         patient_DTO.setIdentification_number(patient.getIdentification_number());
         patient_DTO.setName(patient.getName());
