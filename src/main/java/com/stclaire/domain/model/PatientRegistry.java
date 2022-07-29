@@ -14,9 +14,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table (name = "registry")  //TODO verfy table name
+@Table (name = "PatientsRegistry")  //TODO verify table name
 
-public class Patient {
+public class PatientRegistry {
     //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private long identification_number;     //not updatable

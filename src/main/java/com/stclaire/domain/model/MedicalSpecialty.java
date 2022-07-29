@@ -24,5 +24,5 @@ public class MedicalSpecialty {
     private String physicianInCharge; //updatable max 45 char min 10,
 
     @Column(name = "patients")
-    private Set<Patient> patients;
+    private Set<PatientRegistry> patients;
 }

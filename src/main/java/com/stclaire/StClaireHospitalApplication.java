@@ -1,7 +1,7 @@
 package com.stclaire;
 
 import com.stclaire.domain.model.MedicalSpecialty;
-import com.stclaire.domain.model.Patient;
+import com.stclaire.domain.model.PatientRegistry;
 import com.stclaire.persistence.repository.PatientRepository;
 import com.stclaire.persistence.repository.SpecialtyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,17 +28,17 @@ public class StClaireHospitalApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Patient patient1 = new Patient();
+		PatientRegistry patient1 = new PatientRegistry();
 		patient1.setIdentification_number(100000000);
 		patient1.setName("Travis Cornell");
 		patient1.setAge(30);
-		patient1.setDates_of_appointments(List.of("01-01-2020"));
+		patient1.setDates_of_appointments(List.of("Not a Date"));
 
-		Patient patient2 = new Patient();
+		PatientRegistry patient2 = new PatientRegistry();
 		patient2.setIdentification_number(100000001);
 		patient2.setName("Mike Lander");
 		patient2.setAge(10);
-		patient2.setDates_of_appointments(List.of("01-01-2020"));
+		patient2.setDates_of_appointments(List.of("Not a Date"));
 
 		MedicalSpecialty specialty1 = new MedicalSpecialty();
 		specialty1.setSpecialtyName("General Medicine");

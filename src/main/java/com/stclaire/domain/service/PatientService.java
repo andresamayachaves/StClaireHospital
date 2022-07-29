@@ -1,7 +1,7 @@
 package com.stclaire.domain.service;
 
 import com.stclaire.domain.dto.PatientDTO;
-import com.stclaire.domain.model.Patient;
+import com.stclaire.domain.model.PatientRegistry;
 import com.stclaire.persistence.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ public class PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
-    static PatientDTO convertEntityToDto(Patient patient){
+    static PatientDTO convertEntityToDto(PatientRegistry patient){
         PatientDTO patient_DTO = new PatientDTO();
         patient_DTO.setIdentification_number(patient.getIdentification_number());
         patient_DTO.setName(patient.getName());

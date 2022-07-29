@@ -1,6 +1,6 @@
 package com.stclaire.domain.dto;
 
-import com.stclaire.domain.model.Patient;
+import com.stclaire.domain.model.PatientRegistry;
 import lombok.Data;
 
 import java.util.Set;
@@ -10,6 +10,6 @@ public class MedicalSpecialtyDTO {
     private String specialtyName;
     private String name;
     private String physicianInCharge;
-    private Set<Patient> patients;
+    private Set<PatientRegistry> patients;
 
 }
