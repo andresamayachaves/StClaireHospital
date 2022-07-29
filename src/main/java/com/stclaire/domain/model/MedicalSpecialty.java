@@ -16,6 +16,9 @@ import java.util.Set;
 public class MedicalSpecialty {
 
     @Id
+    private Integer idSpecialty;
+
+    @Column(name = "specialtyName")
     private String specialtyName;    //updatable max 100char min 5char,
 
     @Column(name = "physicianInCharge")

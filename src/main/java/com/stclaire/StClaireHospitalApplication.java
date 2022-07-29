@@ -18,10 +18,16 @@ import java.util.Set;
 @RestController
 public class StClaireHospitalApplication implements CommandLineRunner {
 
-	@GetMapping
+
 	public static void main(String[] args) {
 		SpringApplication.run(StClaireHospitalApplication.class, args);
+		System.out.println("Hello World");
+		hello();
+
 	}
+	@GetMapping
+	public static String hello(){return "Running in LocalHost.";}
+
 
 	@Autowired
 	private SpecialtyRepository specialtyRepository;
@@ -29,8 +35,7 @@ public class StClaireHospitalApplication implements CommandLineRunner {
 	@Autowired
 	private PatientRepository patientRepository;
 
-	@GetMapping
-	public String hello(){return "running";}
+
 
 	@Override
 	public void run(String... args) throws Exception {
