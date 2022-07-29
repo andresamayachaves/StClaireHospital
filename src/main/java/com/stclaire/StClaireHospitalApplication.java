@@ -26,7 +26,7 @@ public class StClaireHospitalApplication implements CommandLineRunner {
 
 	}
 	@GetMapping
-	public static String hello(){return "Running in LocalHost.";}
+	public static String hello(){return "Running in LocalHost. :D";}
 
 
 	@Autowired
