@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -28,7 +29,7 @@ public class SpecialtyService {
         MedicalSpecialtyDTO specialty_DTO = new MedicalSpecialtyDTO();
         specialty_DTO.setSpecialtyName(specialty.getSpecialtyName());
         specialty_DTO.setPhysicianInCharge(specialty.getPhysicianInCharge());
-        specialty_DTO.setPatients(specialty.getPatients());
+        specialty_DTO.setPatients(Set.of(specialty.getPatientRegistry()));
 
         return specialty_DTO;
     }

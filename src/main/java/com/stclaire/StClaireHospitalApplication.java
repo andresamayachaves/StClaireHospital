@@ -8,13 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Set;
 
 @SpringBootApplication
+@RestController
 public class StClaireHospitalApplication implements CommandLineRunner {
 
+	@GetMapping
 	public static void main(String[] args) {
 		SpringApplication.run(StClaireHospitalApplication.class, args);
 	}
@@ -25,6 +29,9 @@ public class StClaireHospitalApplication implements CommandLineRunner {
 	@Autowired
 	private PatientRepository patientRepository;
 
+	@GetMapping
+	public String hello(){return "running";}
+
 	@Override
 	public void run(String... args) throws Exception {
 
@@ -32,18 +39,19 @@ public class StClaireHospitalApplication implements CommandLineRunner {
 		patient1.setIdentification_number(100000000);
 		patient1.setName("Travis Cornell");
 		patient1.setAge(30);
-		patient1.setDates_of_appointments(List.of("Not a Date"));
+		//patient1.setDates_of_appointments(List.of("Not a Date"));
 
 		PatientRegistry patient2 = new PatientRegistry();
 		patient2.setIdentification_number(100000001);
 		patient2.setName("Mike Lander");
 		patient2.setAge(10);
-		patient2.setDates_of_appointments(List.of("Not a Date"));
+		//patient2.setDates_of_appointments(List.of("Not a Date"));
 
 		MedicalSpecialty specialty1 = new MedicalSpecialty();
 		specialty1.setSpecialtyName("General Medicine");
 		specialty1.setPhysicianInCharge("Carl Huge");
-		specialty1.setPatients(Set.of(patient1));
+		specialty1.setPatientRegistry(patient1);
+		specialty1.setPatientRegistry(patient2);
 
 
 	}
