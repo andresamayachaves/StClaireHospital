@@ -40,6 +40,7 @@ public class SpecialtyService {
 
     //------------------------------------
 
+    //This will be used for both model classes
     public static void verifyLimits(AttributeCategory category, String input) {
         boolean inLimits = false;
         if (category == AttributeCategory.PERSON_NAME) {
