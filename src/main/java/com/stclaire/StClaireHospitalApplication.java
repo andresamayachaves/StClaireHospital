@@ -21,7 +21,7 @@ public class StClaireHospitalApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StClaireHospitalApplication.class, args);
-		System.out.println("Hello World");
+		System.out.println("Running Succesfully");
 		hello();
 
 	}
@@ -34,9 +34,6 @@ public class StClaireHospitalApplication implements CommandLineRunner {
 
 	@Autowired
 	private PatientRepository patientRepository;
-
-
-
 	@Override
 	public void run(String... args) throws Exception {
 
